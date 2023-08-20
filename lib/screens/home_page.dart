@@ -23,53 +23,44 @@ class HomePage extends StatelessWidget {
         backgroundColor: Color(0xFF3B8670),
         centerTitle: true,
       ),
-      body: Column(
-        //crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-            //Spacer(flex: 1,),
-          Divider(
-            height: 65,
-            color: Color(0xFFF7F0E6),
-            thickness: 1,
-            indent: 20,
-            endIndent: 20,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          //crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Center(
+              child: Container(
+                height: 350,
+                child: Image.asset('assets/images/colors/Allura - Standing.png'),
+              ),
+            )  ,
+            //Divider(height: 65, color: Color(0xFFF7F0E6), thickness: 1, indent: 20, endIndent: 20,),
+            Row(
 
-          ),
-          catogry('Number', Color(0xFF5F6F52),(){
-            Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){return Number();}));
-          }),
-          Divider(
-            height: 65,
-            color: Color(0xFFFEFAE0),
-            thickness: 1,
-            indent: 20,
-            endIndent: 20,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                catogry('Number', Color(0xFF5F6F52),(){
+                  Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){return Number();}));
+                }),
 
-          ),
-          catogry('Family Member', Color(0xFF969044),(){
-            Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){return fam_mem();}));
-          }), Divider(
-            height: 65,
-            color: Color(0xFFFEFAE0),
-            thickness: 1,
-            indent: 20,
-            endIndent: 20,
-
-          ),
-          catogry('Colors', Color(0xFFCE5F15),(){
-            Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){return colors();}));
-          }), Divider(
-            height: 65,
-            color: Color(0xFFFEFAE0),
-            thickness: 1,
-            indent: 20,
-            endIndent: 20,
-
-          ),
-          catogry('Phrases', Color(0xFFBA8B6B),(){
-            Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){return phares();}));
-          }),
-        ],
+                catogry('Family \nMember', Color(0xFF969044),(){
+                  Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){return fam_mem();}));
+                }),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                catogry('Colors', Color(0xFFCE5F15),(){
+                  Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){return colors();}));
+                }),
+                catogry('Phrases', Color(0xFFBA8B6B),(){
+                  Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){return phares();}));
+                }),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -93,7 +84,7 @@ Function()onTap;
           decoration: BoxDecoration(color: color,
               borderRadius: BorderRadius.all(Radius.circular(6)) ),
       padding: EdgeInsets.only(left: 10, top: 12),
-      width: double.infinity,
+      width: 150,
       height: 65,
 
       child:  Row(
